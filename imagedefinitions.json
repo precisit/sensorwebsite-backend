@@ -9,8 +9,8 @@
         "portMappings": [
           {
             "protocol": "tcp",
-            "containerPort": 5000,
-            "hostPort": 8000
+            "containerPort": 8000,
+            "hostPort": 5000
           }
         ],
         "memory": 128,
