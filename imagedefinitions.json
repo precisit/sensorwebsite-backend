@@ -44,7 +44,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "sensorwebsite"
+      "name": "arnthorhs/sensorwebsite"
     }
   ],
   "placementConstraints": [],
