@@ -17,5 +17,10 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 347859197403.dkr.ecr.eu-north-1.amazonaws.com/arnthorhs/sensorwebsite:latest
 artifacts:
     files: imagedefinitions.json
