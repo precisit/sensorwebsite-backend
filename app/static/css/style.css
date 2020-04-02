@@ -1,0 +1,344 @@
+*{
+  margin: 0px ;
+  padding: 0px ;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url('sunrise.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+#background-overlay{
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 8;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: none;
+}
+
+#logo{
+  width: 70px;
+  float:left;
+  margin-top: -10px;
+  margin-left: 2%;
+  position: fixed;
+}
+
+header{
+  background-color: rgba(0, 0, 0, 0.20);
+  padding-top: 20px;
+}
+
+#date{
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+  margin-top: 0;
+}
+
+.degrees-area{
+  color: white;
+  width: 40%;
+  display: grid;
+  margin-left: 15%;
+  margin-right: 0;
+  margin-top: 10%;
+  row-gap: 2em;
+  column-gap: 1em;
+  grid-template-columns: 1fr 5fr;
+  max-width: 550px;
+}
+
+#degrees{
+  font-weight: 400;
+  font-size: 4em;
+  grid-area: 1/2/span 1/span 1;
+}
+
+.weather-icon{
+  width: 50px;
+
+  vertical-align: middle;
+  grid-area: 2/1/span 1/span 1;
+}
+
+#weather-text{
+
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  grid-area: 2/2/span 1/span 1;
+}
+
+.cloud{
+  width: 24%;
+  max-width: 300px;
+  position: absolute;
+  left: 65%;
+  top: 18%;
+  min-width: 200px;
+}
+
+.diagram-area{
+  color: white;
+  position: absolute;
+  z-index: 10;
+  width: 50%;
+  max-width: 540px;
+  min-width: 355px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 120px;
+  display: none;
+  background-color: rgba(255, 220, 165, 0.9);
+  border-radius: 10px;
+}
+
+#diagram{
+  display: none;
+  width: 85%;
+  max-width: 420px;
+  margin: auto;
+  margin-top: 8%;
+  margin-bottom: 8%;
+
+}
+
+#close-diagram{
+  float: right;
+  margin-top: 2%;
+  margin-right: 10px;
+  display: none;
+  margin-bottom: 0;
+}
+
+#close-diagram:hover{
+  cursor: pointer;
+}
+
+.grid-container{
+  width: 50%;
+  max-width: 660px;
+  font-family: Arial;
+  display: grid;
+  color: white;
+  grid-template-columns: 0.8fr 45% 1.4fr 0.5fr;
+  margin: auto;
+  margin-top: 200px;
+  align-items: center;
+  column-gap: 2em;
+  row-gap: 1.2em;
+  position: static;
+}
+
+.grid-item{
+  font-size: 1.2em;
+}
+
+.grid-icon{
+  display: table-cell;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.centered{
+  justify-self: center;
+  align-self: center;
+}
+
+.measurement{
+  min-width: 200px;
+}
+
+.info-button:hover{
+  transform: scale(1.1);
+}
+
+#city{
+  height: 5%;
+  bottom: 0;
+  right: 0;
+  color: white;
+  font-weight: 300;
+  margin: 10px;
+  position: absolute;
+}
+
+@media screen  and (max-width: 900px) /* Tablet */ {
+
+  .degrees-area{
+    margin-top: 15%;
+  }
+
+  .grid-container{
+    width: 70%;
+    margin: auto;
+    margin-top: 200px;
+  }
+
+  .cloud{
+    left: 65%;
+    top: 22%;
+  }
+
+  .diagram-area{
+    margin-top: 200px;
+  }
+
+  #diagram{
+    width: 85%;
+  }
+
+  #close-diagram{
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 750px)  {
+
+  .degrees-area{
+
+  }
+
+  #logo{
+    margin-top: -15px;
+    margin-left: 2%;
+    width: 65px;
+  }
+
+  #date{
+    font-size: 2em;
+  }
+
+  #degrees{
+    font-size: 3em;
+  }
+
+  .weather-icon{
+    width: 40px;
+  }
+
+  #weather-text{
+    font-size: 1.5em;
+  }
+
+  .cloud{
+    left: 60%;
+    top: 18%;
+  }
+
+  #city{
+    font-size: 1.5em;
+  }
+}
+
+
+@media screen and (max-width: 600px) /* Mobile */ {
+
+  .degrees-area{
+    margin: auto;
+    margin-top: 15%;
+    row-gap: 2em;
+    column-gap: 0em;
+    width: 50%;
+    justify-items: center;
+  }
+
+  #weather-text{
+    align: center;
+  }
+
+  .cloud{
+    margin: auto;
+    top: 65%;
+    left: 0;
+    right: 0;
+  }
+
+
+  .grid-container{
+    width: 70%;
+    column-gap: 1.5em;
+    margin-top: 100px;
+  }
+
+  .grid-item{
+    font-size: 1.1em;
+  }
+
+  .grid-icon{
+    height: 20px;
+  }
+
+  .measurement{
+    min-width: 200px;
+  }
+
+  #diagram{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 550px) /* Mobile */ {
+  .grid-container{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 500px) /* Mobile */ {
+
+  .degrees-area{
+    column-gap: 0.5em;
+  }
+
+  #logo{
+    width: 55px;
+  }
+
+  #date{
+    font-size: 1.7em;
+  }
+
+
+  .grid-container{
+    width: 90%;
+    column-gap: 1em;
+  }
+
+  .cloud{
+    top: 65%;
+  }
+
+  #diagram{
+    width: 95%;
+  }
+
+  #city{
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 400px) /* Mobile */ {
+  .diagram-area{
+    min-width: 300px;
+    min-width: 300px;
+  }
+}
