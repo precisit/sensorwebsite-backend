@@ -2,3 +2,4 @@ dbconnect.py
 testboto.py
 .aws
 *.pyc
+venv

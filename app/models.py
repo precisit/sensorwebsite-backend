@@ -2,31 +2,21 @@ from app import db
 from datetime import datetime
 
 
-class Temperature(db.Model):
-    #t = datetime.today()
-    timestamp = db.Column(db.DateTime, primary_key=True, default=datetime.utcnow)
-    #year = db.Column(db.Integer, index=True, default=t.year)
-    #month = db.Column(db.Integer, index=True, default=t.month)
-    #day = db.Column(db.Integer, index=True, default=t.day)
-    #hour = db.Column(db.Integer, index=True, default=t.hour)
-    #minute = db.Column(db.Integer, index=True, default=t.minute)
-    #second = db.Column(db.Integer, index=True, default=t.second)
-    value = db.Column(db.Integer, index=True)
+class measurements(db.Model):
+    timestamp = db.Column(db.String, primary_key=True)
+    year = db.Column(db.Integer, index=True)
+    month = db.Column(db.Integer, index=True)
+    day = db.Column(db.Integer, index=True)
+    hour = db.Column(db.Integer, index=True)
+    minute = db.Column(db.Integer, index=True)
+    second = db.Column(db.Integer, index=True)
+    temp = db.Column(db.Float, index=True)
+    hum = db.Column(db.Float, index=True)
+    pres = db.Column(db.Float, index=True)
+    ill = db.Column(db.Float, index=True)
+    uv = db.Column(db.Float, index=True)
 
+    def followed_posts(self):
+        return measurements.query(User).filter_by(name='ed').first()
     def __repr__(self):
-        return '<Measurement {}>'.format(self.value)
-
-
-class Humidity(db.Model):
-    #t = datetime.today()
-    timestamp = db.Column(db.DateTime, primary_key=True, default=datetime.utcnow)
-    #year = db.Column(db.Integer, index=True, default=t.year)
-    #month = db.Column(db.Integer, index=True, default=t.month)
-    #day = db.Column(db.Integer, index=True, default=t.day)
-    #hour = db.Column(db.Integer, index=True, default=t.hour)
-    #minute = db.Column(db.Integer, index=True, default=t.minute)
-    #second = db.Column(db.Integer, index=True, default=t.second)
-    value = db.Column(db.Integer, index=True)
-
-    def __repr__(self):
-        return '<Measurement {}>'.format(self.value)
+        return '<Measurements, timestamp {}>'.format(self.timestamp)

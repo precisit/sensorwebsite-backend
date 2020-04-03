@@ -38,7 +38,7 @@
   <div class="wrapper">
 
     <div class="degrees-area">
-      <p id="degrees">6°</p>
+      <p id="degrees">{{measurement.temp}}}</p>
       <img class="weather-icon" src="{{ url_for('static', filename='images/partlysunny.png') }}">
       <h4 id="weather-text">Partly sunny</h4>
     </div>
@@ -49,20 +49,20 @@
     <div class="grid-container">
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/drop.png') }}"></div>
       <div class="grid-item measurement">Humidity:</div>
-      <div class="grid-item">49%</div>
+      <div class="grid-item">{{measurement.hum}}</div>
       <div class="grid-item grid-icon"></div>
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/light.png') }}"></div>
       <div class="grid-item measurement">Light intensity:</div>
-      <div class="grid-item">200 lux</div>
+      <div class="grid-item">{{measurement.ill}}</div>
       <div class="grid-item grid-icon"></div>
 
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/air.png') }}"></div>
       <div class="grid-item measurement">Athmospheric pressure: </div>
-      <div class="grid-item">1.013 hPa</div>
+      <div class="grid-item">{{measurement.pres}}</div>
       <div class="grid-item grid-icon"></div>
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/uv.png') }}"></div>
       <div class="grid-item measurement">UV index:</div>
-      <div class="grid-item">2</div>
+      <div class="grid-item">{{measurement.uv}}</div>
       <div class="grid-item centered"><img class="grid-icon info-button" id="info-button" src="{{ url_for('static', filename='images/info.png') }}" ></div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import os
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://arnthor:Precisit123@sensordata.cqxmt2gpnzag.us-east-1.rds.amazonaws.com:5432/postgres'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:Precisit123@bankvader-db.ct21dnnypyko.eu-north-1.rds.amazonaws.com:5432/postgres'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
