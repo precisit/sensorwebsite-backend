@@ -30,39 +30,48 @@ body{
   display: none;
 }
 
-#logo{
-  width: 70px;
-  float:left;
-  margin-top: -10px;
-  margin-left: 2%;
-  position: fixed;
-}
-
 header{
   background-color: rgba(0, 0, 0, 0.20);
-  padding-top: 20px;
+  align-content: center;
+  position: relative;
+}
+
+#logo{
+  width: 70px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 20px;
 }
 
 #date{
   color: white;
   font-weight: 400;
   text-align: center;
-  margin: auto;
-  padding-bottom: 20px;
-  margin-top: 0;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.top-info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5% 8%;
+}
+
+.flex-item{
+  margin: 50px auto;
 }
 
 .degrees-area{
   color: white;
-  width: 40%;
   display: grid;
-  margin-left: 15%;
-  margin-right: 0;
-  margin-top: 10%;
   row-gap: 2em;
-  column-gap: 1em;
+  column-gap: 3em;
   grid-template-columns: 1fr 5fr;
   max-width: 550px;
+
 }
 
 #degrees{
@@ -73,26 +82,23 @@ header{
 
 .weather-icon{
   width: 50px;
-
   vertical-align: middle;
   grid-area: 2/1/span 1/span 1;
 }
 
 #weather-text{
-
   font-size: 2em;
   display: inline-block;
   vertical-align: middle;
   grid-area: 2/2/span 1/span 1;
+  min-width: 162px;
 }
 
 .cloud{
-  width: 24%;
+  width: 40%;
   max-width: 300px;
-  position: absolute;
-  left: 65%;
-  top: 18%;
-  min-width: 200px;
+  min-width: 210px;
+  align-self: center;
 }
 
 .diagram-area{
@@ -102,24 +108,18 @@ header{
   width: 50%;
   max-width: 540px;
   min-width: 355px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 120px auto;
   left: 0;
   right: 0;
-  margin-top: 120px;
   display: none;
   background-color: rgba(255, 220, 165, 0.9);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #diagram{
   display: none;
   width: 85%;
-  max-width: 420px;
-  margin: auto;
-  margin-top: 8%;
-  margin-bottom: 8%;
-
+  margin: 6% auto 6% auto;
 }
 
 #close-diagram{
@@ -127,7 +127,6 @@ header{
   margin-top: 2%;
   margin-right: 10px;
   display: none;
-  margin-bottom: 0;
 }
 
 #close-diagram:hover{
@@ -141,12 +140,10 @@ header{
   display: grid;
   color: white;
   grid-template-columns: 0.8fr 45% 1.4fr 0.5fr;
-  margin: auto;
-  margin-top: 200px;
+  margin: 150px auto;
   align-items: center;
   column-gap: 2em;
   row-gap: 1.2em;
-  position: static;
 }
 
 .grid-item{
@@ -168,35 +165,29 @@ header{
   min-width: 200px;
 }
 
+.info-button{
+  height: 25px;
+  vertical-align: middle;
+}
+
 .info-button:hover{
   transform: scale(1.1);
 }
 
 #city{
-  height: 5%;
+  height: 40px;
+  float: right;
   bottom: 0;
-  right: 0;
   color: white;
   font-weight: 300;
-  margin: 10px;
-  position: absolute;
+  margin-right: 15px;
 }
 
 @media screen  and (max-width: 900px) /* Tablet */ {
 
-  .degrees-area{
-    margin-top: 15%;
-  }
 
   .grid-container{
     width: 70%;
-    margin: auto;
-    margin-top: 200px;
-  }
-
-  .cloud{
-    left: 65%;
-    top: 22%;
   }
 
   .diagram-area{
@@ -214,18 +205,17 @@ header{
 
 @media screen and (max-width: 750px)  {
 
-  .degrees-area{
-
-  }
-
   #logo{
-    margin-top: -15px;
-    margin-left: 2%;
     width: 65px;
+
   }
 
   #date{
     font-size: 2em;
+  }
+
+  .degrees-area{
+    column-gap: 2em;
   }
 
   #degrees{
@@ -240,9 +230,8 @@ header{
     font-size: 1.5em;
   }
 
-  .cloud{
-    left: 60%;
-    top: 18%;
+  .grid-container{
+    margin-top: 140px;
   }
 
   #city{
@@ -254,30 +243,29 @@ header{
 @media screen and (max-width: 600px) /* Mobile */ {
 
   .degrees-area{
-    margin: auto;
-    margin-top: 15%;
-    row-gap: 2em;
-    column-gap: 0em;
-    width: 50%;
-    justify-items: center;
+    column-gap: 1em;
+    text-align: center;
+    column-gap: 0;
   }
 
   #weather-text{
     align: center;
   }
 
-  .cloud{
-    margin: auto;
-    top: 65%;
-    left: 0;
-    right: 0;
+  .top-info{
+    flex-direction: column;
+    justify-content: center;
   }
 
+  .flex-item{
+    margin: 40px auto;
+  }
 
   .grid-container{
     width: 70%;
     column-gap: 1.5em;
-    margin-top: 100px;
+    margin: 100px auto;
+    margin-top: 70px;
   }
 
   .grid-item{
@@ -306,25 +294,22 @@ header{
 @media screen and (max-width: 500px) /* Mobile */ {
 
   .degrees-area{
-    column-gap: 0.5em;
+
   }
 
   #logo{
     width: 55px;
+    margin-left: 15px;
   }
 
   #date{
     font-size: 1.7em;
+    padding: 20px 0;
   }
-
 
   .grid-container{
     width: 90%;
     column-gap: 1em;
-  }
-
-  .cloud{
-    top: 65%;
   }
 
   #diagram{
@@ -337,8 +322,35 @@ header{
 }
 
 @media screen and (max-width: 400px) /* Mobile */ {
+
+  #logo{
+    width: 48px;
+    margin-left: 10px;
+  }
+
+  .degrees-area{
+
+  }
+
+  .grid-container{
+    margin-top: 30px;
+    grid-template-columns: 0fr 45% 1.4fr 0.5fr;
+    width: 99%;
+  }
+
+  .value{
+    text-align: right;
+  }
+
   .diagram-area{
     min-width: 300px;
-    min-width: 300px;
+    margin-top: 270px;
+  }
+
+  .grid-icon{
+    width: 0px;
+  }
+  .info-button{
+    height: 20px;
   }
 }

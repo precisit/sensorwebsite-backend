@@ -7,17 +7,13 @@
   <meta name="Cecilia Wikberg, Anders Liss, Arnthor Sverrisson" content="Weather information">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--<link href="app/templates/style.css" rel="stylesheet">-->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
 
@@ -27,46 +23,46 @@
   <header class="header">
     <img id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
     <h1 id="date"></h1>
-
   </header>
 
   <div class="diagram-area">
     <h3 id="close-diagram">X</h3>
+    <br>
     <img id="diagram" src="{{ url_for('static', filename='images/diagram.png') }}" alt="Diagram">
   </div>
 
   <div class="wrapper">
 
-    <div class="degrees-area">
-      <p id="degrees">{{measurement.temp}}</p>
-      <img class="weather-icon" src="{{ url_for('static', filename='images/partlysunny.png') }}">
-      <h4 id="weather-text"></h4>
-    </div>
+    <section class="top-info">
+      <div class="degrees-area flex-item">
+        <p id="degrees">{{measurement.temp}}°C</p>
+        <img class="weather-icon"  src="{{ url_for('static', filename='images/partlysunny.png') }}">
+        <h4 id="weather-text"></h4>
+      </div>
+      <img class="cloud" src="{{ url_for('static', filename='images/cloud.png') }}">
 
-    <img class="cloud" src="{{ url_for('static', filename='images/cloud.png') }}">
-
+    </section>
 
     <div class="grid-container">
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/drop.png') }}"></div>
       <div class="grid-item measurement">Humidity:</div>
-      <div class="grid-item">{{measurement.hum}}</div>
+      <div class="grid-item value">{{measurement.hum}}%</div>
       <div class="grid-item grid-icon"></div>
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/light.png') }}"></div>
       <div class="grid-item measurement">Light intensity:</div>
-      <div class="grid-item">{{measurement.ill}}</div>
+      <div class="grid-item value">{{measurement.ill}} lux</div>
       <div class="grid-item grid-icon"></div>
 
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/air.png') }}"></div>
       <div class="grid-item measurement">Athmospheric pressure: </div>
-      <div class="grid-item">{{measurement.pres}}</div>
+      <div class="grid-item value">{{measurement.pres}} hPa</div>
       <div class="grid-item grid-icon"></div>
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/uv.png') }}"></div>
       <div class="grid-item measurement">UV index:</div>
-      <div class="grid-item">{{measurement.uv}}</div>
-      <div class="grid-item centered"><img class="grid-icon info-button" id="info-button" src="{{ url_for('static', filename='images/info.png') }}" ></div>
+      <div class="grid-item value">{{measurement.uv}}</div>
+      <div class="grid-item centered"><img class="info-button" id="info-button" src="{{ url_for('static', filename='images/info.png') }}" ></div>
     </div>
   </div>
-
 
   <footer>
     <h3 id="city">Uppsala, Sweden</h3>
