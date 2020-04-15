@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var urlCodes = "https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/29/codes.json";
+  /*var urlCodes = "https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/29/codes.json";
   var url = "https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/29/station/97530/period/latest-day/data.json";
   var res = $.getJSON(url, function(json) {
     var items = [];
@@ -10,8 +10,22 @@ $(document).ready(function() {
         console.log(val)
         $('#weather-text').append(text);
     })
-  })
-  .done(function() {
+  })*/
+  var cloudy_limit=600
+  var sunny_limit=1000
+  var ill=$('#ill').val
+  var text = ""
+  if (ill>sunny_limit){
+    text= "Sunny"
+  }
+  else if (ill < cloudy_limit){
+    text = "Cloudy"
+  }
+  else{
+    text = "Partly cloudy"
+  }
+  $('#weather-text').append(text);
+  /*.done(function() {
     console.log( "Get JSON done" );
   })
   .fail(function(jqxhr, textStatus, error) {
@@ -19,7 +33,7 @@ $(document).ready(function() {
   })
   .always(function() {
     console.log( "Get JSON complete" );
-  });
+  });*/
   $( '#info-button' ).click( function() {
       $('#diagram').attr("style", "display:block")
       $('#background-overlay').fadeToggle();
