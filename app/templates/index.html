@@ -35,9 +35,9 @@
 
     <section class="top-info">
       <div class="degrees-area flex-item">
-        <p id="degrees">{{measurement.temp}}°C</p>
+        <p id="degrees">{{measurement.temp | round(1)}}°C</p>
         <img class="weather-icon"  src="{{ url_for('static', filename='images/partlysunny.png') }}">
-        <h4 id="weather-text"></h4>
+        <h4 id="weather-text">{{is_cloudy}}</h4>
       </div>
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/cloud.png') }}">
 
@@ -46,20 +46,20 @@
     <div class="grid-container">
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/drop.png') }}"></div>
       <div class="grid-item measurement">Humidity:</div>
-      <div class="grid-item value">{{measurement.hum}}%</div>
+      <div class="grid-item value">{{measurement.hum | round | int}}%</div>
       <div class="grid-item grid-icon"></div>
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/light.png') }}"></div>
       <div class="grid-item measurement">Light intensity:</div>
-      <div class="grid-item value" id="ill">{{measurement.ill}} lux</div>
+      <div class="grid-item value" id="ill">{{measurement.ill | round | int}} lux</div>
       <div class="grid-item grid-icon"></div>
 
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/air.png') }}"></div>
       <div class="grid-item measurement">Athmospheric pressure: </div>
-      <div class="grid-item value">{{measurement.pres}} hPa</div>
+      <div class="grid-item value">{{measurement.pres | round | int}} hPa</div>
       <div class="grid-item grid-icon"></div>
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/uv.png') }}"></div>
       <div class="grid-item measurement">UV index:</div>
-      <div class="grid-item value">{{measurement.uv}}</div>
+      <div class="grid-item value">{{measurement.uv | round | int}}</div>
       <div class="grid-item centered"><img class="info-button" id="info-button" src="{{ url_for('static', filename='images/info.png') }}" ></div>
     </div>
   </div>
