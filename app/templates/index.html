@@ -55,7 +55,7 @@
 
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/air.png') }}"></div>
       <div class="grid-item measurement">Athmospheric pressure: </div>
-      <div class="grid-item value">{{measurement.pres | round | int}} hPa</div>
+      <div class="grid-item value">{{measurement.pres | round | int}} kPa</div>
       <div class="grid-item grid-icon"></div>
       <div class="grid-item centered"><img class="grid-icon" src="{{ url_for('static', filename='images/uv.png') }}"></div>
       <div class="grid-item measurement">UV index:</div>
