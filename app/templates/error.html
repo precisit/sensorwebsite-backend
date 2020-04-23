@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bänkväder</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-</head>
-<body>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
-    <header class="header">
-        <img id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-        <h1 id="date"></h1>
-    </header>
+{% extends "base.html" %}
+
+{% block content %}
     <div id="error-div">
         <p id="error-msg">Something went wrong when fetching the data, please try again later</p>
         <button class="btn btn-warning" id="error-ok" onclick="closeErrorDiv()" type="button" name="ok-button">Ok</button>
     </div>
-</body>
-</html>
+{% endblock %}

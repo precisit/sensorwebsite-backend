@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>Bänkväder</title>
-  <meta name="Cecilia Wikberg, Anders Liss, Arnthor Sverrisson" content="Weather information">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-
-<body>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
-
-  <div id="background-overlay">
-  </div>
-  <header class="header">
-    <img id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-    <h1 id="date"></h1>
-  </header>
+{% block content %}
 
   <div class="diagram-area">
     <h3 id="close-diagram">X</h3>
@@ -63,10 +41,4 @@
     </div>
   </div>
 
-  <footer>
-    <h3 id="city">Uppsala, Sweden</h3>
-  </footer>
-
-</body>
-
-</html>
+{% endblock %}
