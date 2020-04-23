@@ -30,6 +30,33 @@ body{
   display: none;
 }
 
+#error-div{
+  position: absolute;
+  width: 40%;
+  height: 200px;
+  max-width: 410px;
+  min-width: 185px;
+  min-height: 160px;
+  display: block;
+  left:0;
+  right:0;
+  margin: 300px auto;
+  background-color: #FAD49C;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+#error-msg{
+  padding: 10%;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.btn{
+  display: block !important;
+  margin: 10px auto;
+}
+
 header{
   background-color: rgba(0, 0, 0, 0.20);
   align-content: center;
@@ -242,6 +269,15 @@ header{
 
 @media screen and (max-width: 600px) /* Mobile */ {
 
+  #error-div{
+    height: 16%;
+    margin-top: 250px;
+  }
+
+  #error-msg{
+      font-size: 1em;
+  }
+
   .degrees-area{
     column-gap: 1em;
     text-align: center;
@@ -328,8 +364,12 @@ header{
     margin-left: 10px;
   }
 
-  .degrees-area{
+  .flex-item{
+    margin: 25px auto;
+  }
 
+  .cloud{
+    margin: 30px auto;
   }
 
   .grid-container{

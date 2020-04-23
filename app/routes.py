@@ -22,4 +22,4 @@ def index():
             cloudy_text = "Partly Cloudy"
         return render_template('index.html', measurement=m, is_cloudy=cloudy_text)
     except:
-        return render_template('error.html', errormessage="Cant'retreve data")
+        return render_template('error.html')

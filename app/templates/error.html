@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Error. Something went wrong</h1>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+    <header class="header">
+        <img id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        <h1 id="date"></h1>
+    </header>
+    <div id="error-div">
+        <p id="error-msg">Something went wrong when fetching the data, please try again later</p>
+        <button class="btn btn-warning" id="error-ok" onclick="closeErrorDiv()" type="button" name="ok-button">Ok</button>
+    </div>
 </body>
 </html>

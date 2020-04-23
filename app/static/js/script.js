@@ -33,3 +33,9 @@ window.onload = function(){
   document.getElementById("date").innerHTML = day + " - " + month + " " + d;
 
 };
+function showErrorDiv() {
+  document.getElementById("error-div").style.display = "block";
+}
+function closeErrorDiv() {
+  document.getElementById("error-div").style.display = "none";
+}
