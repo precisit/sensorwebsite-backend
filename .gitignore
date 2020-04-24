@@ -3,3 +3,4 @@ testboto.py
 .aws
 *.pyc
 venv
+app.db

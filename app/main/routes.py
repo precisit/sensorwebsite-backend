@@ -1,10 +1,12 @@
 from flask import render_template
-from app import app, db
+from app import db
 from sqlalchemy.sql import func
 from app.models import measurements
+from app.main import bp
 
-@app.route('/')
-@app.route('/index')
+
+@bp.route('/')
+@bp.route('/index')
 def index():
     try:
         query = db.session.query(func.max(measurements.timestamp))
