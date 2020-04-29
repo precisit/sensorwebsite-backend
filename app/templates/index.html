@@ -13,14 +13,20 @@
     <section class="top-info">
       <div class="degrees-area flex-item">
         <p id="degrees">{{measurement.temp | round(1)}}°C</p>
+        {% if is_cloudy == "Sunny" %}
+        <img class="weather-icon"  src="{{ url_for('static', filename='images/sun.png') }}">
+        {% elif is_cloudy == "Cloudy" %}
+        <img class="weather-icon"  src="{{ url_for('static', filename='images/clouds.png') }}">
+        {% else %}
         <img class="weather-icon"  src="{{ url_for('static', filename='images/partlysunny.png') }}">
+        {% endif %}
         <h4 id="weather-text">{{is_cloudy}}</h4>
       </div>
-      {% if measurement.ill > 1700 %}
+      {% if measurement.ill > 1100 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/sunny.png') }}">
       {% elif measurement.hum > 90 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/rain_2.png') }}">
-      {% elif measurement.temp > 50 %}
+      {% elif measurement.temp > 25 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/hot_2.png') }}">
       {% elif measurement.temp < 0 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/cold.png') }}">
