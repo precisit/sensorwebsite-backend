@@ -16,11 +16,11 @@
         <img class="weather-icon"  src="{{ url_for('static', filename='images/partlysunny.png') }}">
         <h4 id="weather-text">{{is_cloudy}}</h4>
       </div>
-      {% if measurement.ill < 1100 %}
+      {% if measurement.ill > 1700 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/sunny.png') }}">
       {% elif measurement.hum > 90 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/rain_2.png') }}">
-      {% elif measurement.temp > 29 %}
+      {% elif measurement.temp > 30 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/hot_2.png') }}">
       {% elif measurement.temp < 0 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/cold.png') }}">
