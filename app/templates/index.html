@@ -20,7 +20,7 @@
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/sunny.png') }}">
       {% elif measurement.hum > 90 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/rain_2.png') }}">
-      {% elif measurement.temp > 30 %}
+      {% elif measurement.temp > 50 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/hot_2.png') }}">
       {% elif measurement.temp < 0 %}
       <img class="cloud flex-item" src="{{ url_for('static', filename='images/cold.png') }}">
